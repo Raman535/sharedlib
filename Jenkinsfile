@@ -4,7 +4,8 @@ pipeline {
     stage('Reserving') {
       steps {
         node(label: 'cherry') {
-          sh 'echo "hello"'
+          sh '''echo "hello"
+export test1="cov-build"'''
         }
 
       }
@@ -29,7 +30,8 @@ pipeline {
 
     stage('Testing') {
       steps {
-        sh 'python3 test_x.py > out.html'
+        sh '''python3 test_x.py > out.html
+echo $test1'''
       }
     }
 
