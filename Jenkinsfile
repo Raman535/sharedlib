@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Reserving') {
       steps {
@@ -11,6 +11,7 @@ pipeline {
     }
 
     stage('checkout') {
+      agent any
       steps {
         dir(path: '/home/cherry/workspace') {
           git(url: 'https://github.com/Raman535/sharedlib/', branch: 'main', credentialsId: 'github')
@@ -20,6 +21,7 @@ pipeline {
     }
 
     stage('Build') {
+      agent any
       steps {
         sh 'python test.py'
       }
