@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Reserving') {
       steps {
-        node(label: 'cherry')
+        node(label: 'cherry') {
+          sh 'echo "hello"'
+        }
+
       }
     }
 
