@@ -12,8 +12,10 @@ pipeline {
 
     stage('checkout') {
       steps {
-        dir(path: '/home/cherry/workspace')
-        git(url: 'https://github.com/Raman535/sharedlib', branch: 'main', credentialsId: 'github')
+        dir(path: '/home/cherry/workspace') {
+          git(url: 'https://github.com/Raman535/sharedlib/', branch: 'main', credentialsId: 'github')
+        }
+
       }
     }
 
