@@ -23,13 +23,13 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh 'python test.py'
+        sh 'python3 test.py'
       }
     }
 
     stage('Testing') {
       steps {
-        sh 'python unittest.py > out.html'
+        sh 'python3 unittest.py > out.html'
       }
     }
 
