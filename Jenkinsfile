@@ -25,7 +25,6 @@ export test1="cov-build"'''
       agent any
       steps {
         sh 'python3 test.py'
-        library 'sample'
       }
     }
 
@@ -39,6 +38,12 @@ echo $test1'''
     stage('Archive') {
       steps {
         archiveArtifacts(artifacts: '*html', onlyIfSuccessful: true)
+      }
+    }
+
+    stage('Email') {
+      steps {
+        emailext(subject: 'Hello Follks', body: 'Cool Job Raman', from: 'no-reply@cherry.com', to: 'raman535@hotmail.com')
       }
     }
 
