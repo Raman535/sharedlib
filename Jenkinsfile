@@ -25,6 +25,7 @@ export test1="cov-build"'''
       agent any
       steps {
         sh 'python3 test.py'
+        library 'sample'
       }
     }
 
