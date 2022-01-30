@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
 def call(String name = 'human') {
-    result = false
+    result = true
     if (name =~ /feature\/[0-9]+\.[0-9]+\.[0-9]+/) {
-        result=true
+        result=false
     }
     echo "Hello, ${name}."
     echo "result, ${result}"
